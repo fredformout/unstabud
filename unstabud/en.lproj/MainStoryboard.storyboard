@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="U2A-gA-Hc7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Categories List Table View Controller-->
+        <scene sceneID="iGK-YI-xpy">
+            <objects>
+                <tableViewController id="nsy-oC-Px3" customClass="CCategoriesListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AeP-fx-xAY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OutcomeCell" id="L8k-li-R0a" customClass="COutcomeCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZC0-46-D7a">
+                                            <rect key="frame" x="20" y="0.0" width="140" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAI-Cb-3c2">
+                                            <rect key="frame" x="168" y="0.0" width="140" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="1" green="0.1741308486" blue="0.1002649414" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="nameLabel" destination="ZC0-46-D7a" id="vwO-F4-hA9"/>
+                                    <outlet property="valueLabel" destination="RAI-Cb-3c2" id="l8F-7c-9p6"/>
+                                    <segue destination="FhX-pS-E2b" kind="modal" identifier="SegueToAddOutcomeScreen" modalTransitionStyle="coverVertical" id="gcS-1g-edR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nHu-vR-5Zt">
+                        <barButtonItem key="leftBarButtonItem" title="+ Доход" id="ycg-nG-4lV">
+                            <connections>
+                                <segue destination="iHC-Ms-T0g" kind="modal" identifier="SegueToIncomeScreen" modalTransitionStyle="coverVertical" id="COR-aB-06n"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+ Категорию" id="UcO-uJ-nQa">
+                            <connections>
+                                <segue destination="mjl-pp-dWK" kind="modal" identifier="SegueToAddCategoryScreen" modalTransitionStyle="coverVertical" id="r1q-Yo-b1X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWc-RB-vOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="268"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vgx-bN-24H">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="mjl-pp-dWK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4U7-e2-e8I">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qzN-6Q-SGe" kind="relationship" relationship="rootViewController" id="h7E-zi-Wwf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEN-bM-lgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="1000"/>
+        </scene>
+        <!--Add Category Screen View Controller-->
+        <scene sceneID="fif-iJ-seO">
+            <objects>
+                <viewController id="qzN-6Q-SGe" customClass="CAddCategoryScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eG6-5t-uHf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="eJa-0v-9qv">
+                                <rect key="frame" x="35" y="131" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qzN-6Q-SGe" id="EmR-md-LOO"/>
+                                </connections>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="MWQ-eL-Crd">
+                                <rect key="frame" x="219" y="67" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="budgetIsDefinedSwitchValueChangedAction" destination="qzN-6Q-SGe" eventType="valueChanged" id="8Ff-Ru-V7M"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Известен ли бюджет?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BIp-Pj-IKy">
+                                <rect key="frame" x="24" y="70" width="187" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Введите бюджет:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kcA-Bi-w7U">
+                                <rect key="frame" x="24" y="102" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="T6W-0Y-yVi">
+                                <rect key="frame" x="35" y="29" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qzN-6Q-SGe" id="dSP-cy-5P3"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ввведите название категории:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pyc-Vs-fTD">
+                                <rect key="frame" x="24" y="0.0" width="251" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="No2-GE-kZ6">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="NtF-LJ-1J3">
+                            <connections>
+                                <action selector="closeScreen" destination="qzN-6Q-SGe" id="gw3-hQ-qOX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="uPb-q9-PyC">
+                            <connections>
+                                <action selector="pressDoneAction" destination="qzN-6Q-SGe" id="UJp-Hg-NFz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="budgetIsDefinedSwitch" destination="MWQ-eL-Crd" id="Nte-Am-bzP"/>
+                        <outlet property="budgetValueTextField" destination="eJa-0v-9qv" id="S3E-gX-1rM"/>
+                        <outlet property="nameTextField" destination="T6W-0Y-yVi" id="Gtk-h8-MXP"/>
+                        <outlet property="valueOfBudgetLabel" destination="kcA-Bi-w7U" id="5R8-1R-2PL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rpz-yY-AuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="1000"/>
+        </scene>
+        <!--Add Outcome Screen View Controller-->
+        <scene sceneID="BwO-c1-1Hw">
+            <objects>
+                <viewController id="jjd-dr-Tfe" customClass="CAddOutcomeScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6bD-eE-NbX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="ne6-G7-8xk">
+                                <rect key="frame" x="35" y="29" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jjd-dr-Tfe" id="57Y-be-4wp"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ввведите сколько бабла уходит:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iY4-ib-set">
+                                <rect key="frame" x="24" y="0.0" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lyN-Nv-6rI">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="2lu-lE-M6f">
+                            <connections>
+                                <action selector="closeScreen" destination="jjd-dr-Tfe" id="H8V-Tp-IUE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="pE0-b6-YPK">
+                            <connections>
+                                <action selector="pressDoneAction" destination="jjd-dr-Tfe" id="gNU-gk-7M2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="outcomeValueTextField" destination="ne6-G7-8xk" id="G8A-6l-TjD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwH-3J-nIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="268"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a2T-mp-WoS">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="FhX-pS-E2b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Xf-en-QWb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jjd-dr-Tfe" kind="relationship" relationship="rootViewController" id="cEx-B0-jqr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2EZ-yB-2Jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="268"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jd1-gY-3o0">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="iHC-Ms-T0g" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvg-gv-XnD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QKA-Ob-EkI" kind="relationship" relationship="rootViewController" id="X4B-Dv-sVQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xb2-ct-pD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="-437"/>
+        </scene>
+        <!--Income Screen View Controller-->
+        <scene sceneID="LeT-Qs-gEm">
+            <objects>
+                <viewController id="QKA-Ob-EkI" customClass="CIncomeScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pcx-tx-iih">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="k1o-es-2sV">
+                                <rect key="frame" x="35" y="166" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QKA-Ob-EkI" id="9QQ-hU-VMX"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Сбросить бюджеты?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1CX-cs-rx8">
+                                <rect key="frame" x="24" y="70" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ADl-DY-9FH">
+                                <rect key="frame" x="219" y="67" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="resetBudgetsSwitchValueChangedAction" destination="QKA-Ob-EkI" eventType="valueChanged" id="2Eh-PY-nrj"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="X01-De-kge">
+                                <rect key="frame" x="219" y="102" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="payOffDebtsSwitchValueChangedAction" destination="QKA-Ob-EkI" eventType="valueChanged" id="YWp-zF-BaF"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Раздать долги?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ngs-f1-EeB">
+                                <rect key="frame" x="24" y="105" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Введите сколько вы должны:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z4m-5k-Sb6">
+                                <rect key="frame" x="24" y="137" width="241" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iIe-A4-692">
+                                <rect key="frame" x="35" y="29" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QKA-Ob-EkI" id="G03-dz-GBc"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ввведите сколько пришло бабла:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IHX-Gb-lTe">
+                                <rect key="frame" x="24" y="0.0" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tfU-y5-VAC">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="dol-SM-Ymt">
+                            <connections>
+                                <action selector="closeScreen" destination="QKA-Ob-EkI" id="vew-2J-9bG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="yoh-rJ-lSg">
+                            <connections>
+                                <action selector="pressDoneAction" destination="QKA-Ob-EkI" id="Ay8-xc-DRf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="debtsValueTextField" destination="k1o-es-2sV" id="geW-vq-mQw"/>
+                        <outlet property="incomeValueTextField" destination="iIe-A4-692" id="Uh0-Dc-gdf"/>
+                        <outlet property="payOffDebtsSwitch" destination="X01-De-kge" id="00G-US-tjj"/>
+                        <outlet property="resetBudgetsSwitch" destination="ADl-DY-9FH" id="MJZ-PZ-cae"/>
+                        <outlet property="valueOfDebtsLabel" destination="z4m-5k-Sb6" id="9CN-5g-l8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQU-vY-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="-437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yZh-ZP-BIX">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="U2A-gA-Hc7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIq-Es-HIc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nsy-oC-Px3" kind="relationship" relationship="rootViewController" id="wKz-6x-6gw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYQ-ku-QDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-647" y="268"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CAddCategoryScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CAddCategoryScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="budgetIsDefinedSwitchValueChangedAction"/>
+                <relationship kind="action" name="closeScreen"/>
+                <relationship kind="action" name="pressDoneAction"/>
+                <relationship kind="outlet" name="budgetIsDefinedSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="budgetValueTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="valueOfBudgetLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CAddOutcomeScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CAddOutcomeScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeScreen"/>
+                <relationship kind="action" name="pressDoneAction"/>
+                <relationship kind="outlet" name="outcomeValueTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CCategoriesListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCategoriesListTableViewController.h"/>
+        </class>
+        <class className="CIncomeScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIncomeScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeScreen"/>
+                <relationship kind="action" name="payOffDebtsSwitchValueChangedAction"/>
+                <relationship kind="action" name="pressDoneAction"/>
+                <relationship kind="action" name="resetBudgetsSwitchValueChangedAction"/>
+                <relationship kind="outlet" name="debtsValueTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="incomeValueTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="payOffDebtsSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="resetBudgetsSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="valueOfDebtsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="COutcomeCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/COutcomeCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valueLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
