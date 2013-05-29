@@ -25,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"appBackground"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeTile]]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
