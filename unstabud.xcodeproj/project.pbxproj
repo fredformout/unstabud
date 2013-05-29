@@ -34,6 +34,8 @@
 		1E1DC88B174CB8D6009C558F /* CAddCategoryScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC88A174CB8D6009C558F /* CAddCategoryScreenViewController.m */; };
 		1E1DC88E174CBE28009C558F /* CDao+OutcomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC88D174CBE28009C558F /* CDao+OutcomeCategory.m */; };
 		1E1DC892174CDDD5009C558F /* CAddOutcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */; };
+		1EC1E59D1755E03800F9F993 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC1E59C1755E03800F9F993 /* CoreText.framework */; };
+		1EC1E5A21755E0EB00F9F993 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,9 @@
 		1E1DC88D174CBE28009C558F /* CDao+OutcomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDao+OutcomeCategory.m"; sourceTree = "<group>"; };
 		1E1DC890174CDDD5009C558F /* CAddOutcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAddOutcomeScreenViewController.h; path = AddOutcomeScreen/CAddOutcomeScreenViewController.h; sourceTree = "<group>"; };
 		1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAddOutcomeScreenViewController.m; path = AddOutcomeScreen/CAddOutcomeScreenViewController.m; sourceTree = "<group>"; };
+		1EC1E59C1755E03800F9F993 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		1EC1E5A01755E0EB00F9F993 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC1E59D1755E03800F9F993 /* CoreText.framework in Frameworks */,
 				1E1DC867174C9D55009C558F /* CoreData.framework in Frameworks */,
 				1E1DC82E174C9D2E009C558F /* UIKit.framework in Frameworks */,
 				1E1DC830174C9D2E009C558F /* Foundation.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		1E1DC82C174C9D2E009C558F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EC1E59C1755E03800F9F993 /* CoreText.framework */,
 				1E1DC866174C9D55009C558F /* CoreData.framework */,
 				1E1DC82D174C9D2E009C558F /* UIKit.framework */,
 				1E1DC82F174C9D2E009C558F /* Foundation.framework */,
@@ -132,6 +139,7 @@
 		1E1DC833174C9D2E009C558F /* unstabud */ = {
 			isa = PBXGroup;
 			children = (
+				1EC1E59E1755E05600F9F993 /* External Libraries */,
 				1E1DC88F174CDDAA009C558F /* AddOutcomeScreen */,
 				1E1DC888174CB8A8009C558F /* AddCategoryScreen */,
 				1E1DC87E174CA9E7009C558F /* IncomeScreen */,
@@ -266,6 +274,23 @@
 			name = AddOutcomeScreen;
 			sourceTree = "<group>";
 		};
+		1EC1E59E1755E05600F9F993 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1E59F1755E0EB00F9F993 /* TTTAttributedLabel */,
+			);
+			path = "External Libraries";
+			sourceTree = "<group>";
+		};
+		1EC1E59F1755E0EB00F9F993 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1E5A01755E0EB00F9F993 /* TTTAttributedLabel.h */,
+				1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +375,7 @@
 				1E1DC88B174CB8D6009C558F /* CAddCategoryScreenViewController.m in Sources */,
 				1E1DC88E174CBE28009C558F /* CDao+OutcomeCategory.m in Sources */,
 				1E1DC892174CDDD5009C558F /* CAddOutcomeScreenViewController.m in Sources */,
+				1EC1E5A21755E0EB00F9F993 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +502,7 @@
 				1E1DC84F174C9D2E009C558F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
