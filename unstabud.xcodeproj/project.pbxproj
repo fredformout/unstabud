@@ -39,6 +39,11 @@
 		1EC1E5A81755EFA300F9F993 /* CommandButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A51755EFA300F9F993 /* CommandButton.m */; };
 		1EC1E5A91755EFA300F9F993 /* CommandMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A71755EFA300F9F993 /* CommandMaster.m */; };
 		1EC1E5AC1755F0E000F9F993 /* CCategoriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5AB1755F0E000F9F993 /* CCategoriesListViewController.m */; };
+		1EC1E5B017560F4A00F9F993 /* cellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC1E5AE17560F4A00F9F993 /* cellBackground.png */; };
+		1EC1E5B117560F4A00F9F993 /* cellBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC1E5AF17560F4A00F9F993 /* cellBackground@2x.png */; };
+		1EC1E5B81756136D00F9F993 /* appBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC1E5B61756136D00F9F993 /* appBackground.png */; };
+		1EC1E5B91756136D00F9F993 /* appBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC1E5B71756136D00F9F993 /* appBackground@2x.png */; };
+		1EC1E5C11756247200F9F993 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC1E5C01756247200F9F993 /* arrow-up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +103,11 @@
 		1EC1E5A71755EFA300F9F993 /* CommandMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandMaster.m; sourceTree = "<group>"; };
 		1EC1E5AA1755F0E000F9F993 /* CCategoriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCategoriesListViewController.h; sourceTree = "<group>"; };
 		1EC1E5AB1755F0E000F9F993 /* CCategoriesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCategoriesListViewController.m; sourceTree = "<group>"; };
+		1EC1E5AE17560F4A00F9F993 /* cellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellBackground.png; sourceTree = "<group>"; };
+		1EC1E5AF17560F4A00F9F993 /* cellBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellBackground@2x.png"; sourceTree = "<group>"; };
+		1EC1E5B61756136D00F9F993 /* appBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appBackground.png; sourceTree = "<group>"; };
+		1EC1E5B71756136D00F9F993 /* appBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appBackground@2x.png"; sourceTree = "<group>"; };
+		1EC1E5C01756247200F9F993 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +158,7 @@
 		1E1DC833174C9D2E009C558F /* unstabud */ = {
 			isa = PBXGroup;
 			children = (
+				1EC1E5B51756136D00F9F993 /* Resources */,
 				1EC1E59E1755E05600F9F993 /* External Libraries */,
 				1E1DC88F174CDDAA009C558F /* AddOutcomeScreen */,
 				1E1DC888174CB8A8009C558F /* AddCategoryScreen */,
@@ -248,6 +259,7 @@
 		1E1DC86E174CA20F009C558F /* CategoriesList */ = {
 			isa = PBXGroup;
 			children = (
+				1EC1E5AD17560F4A00F9F993 /* Resources */,
 				1E1DC86B174CA177009C558F /* CCategoriesListTableViewController.h */,
 				1E1DC86C174CA177009C558F /* CCategoriesListTableViewController.m */,
 				1E1DC86F174CA245009C558F /* COutcomeCell.h */,
@@ -314,6 +326,25 @@
 			path = CommandMaster;
 			sourceTree = "<group>";
 		};
+		1EC1E5AD17560F4A00F9F993 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1E5AE17560F4A00F9F993 /* cellBackground.png */,
+				1EC1E5AF17560F4A00F9F993 /* cellBackground@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EC1E5B51756136D00F9F993 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1E5C01756247200F9F993 /* arrow-up.png */,
+				1EC1E5B61756136D00F9F993 /* appBackground.png */,
+				1EC1E5B71756136D00F9F993 /* appBackground@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +401,11 @@
 				1E1DC842174C9D2E009C558F /* Default@2x.png in Resources */,
 				1E1DC844174C9D2E009C558F /* Default-568h@2x.png in Resources */,
 				1E1DC847174C9D2E009C558F /* MainStoryboard.storyboard in Resources */,
+				1EC1E5B017560F4A00F9F993 /* cellBackground.png in Resources */,
+				1EC1E5B117560F4A00F9F993 /* cellBackground@2x.png in Resources */,
+				1EC1E5B81756136D00F9F993 /* appBackground.png in Resources */,
+				1EC1E5B91756136D00F9F993 /* appBackground@2x.png in Resources */,
+				1EC1E5C11756247200F9F993 /* arrow-up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

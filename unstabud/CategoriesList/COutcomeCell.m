@@ -26,13 +26,16 @@
 {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(revertViewOfValueLabel)];
     [_valueLabel addGestureRecognizer:tapGestureRecognizer];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground"]];
+    self.backgroundView = imageView;
 }
 
 - (void)revertViewOfValueLabel
 {
     if (stateOfValueLabel == WASTE)
     {
-        [_valueLabel setTextColor:[UIColor colorWithRed:46.0/255.0 green:176.0/255.0 blue:0.0/255.0 alpha:1.0]];
+        [_valueLabel setTextColor:[UIColor colorWithRed:55.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:1.0]];
         
         NSString *resultString = [CStringUtility spacedMoneyString:[NSString stringWithFormat:@"%.0f р.", [_outcomeCategory.budget floatValue] - [_outcomeCategory.outcome floatValue]]];
         [_valueLabel setText:resultString];
@@ -54,11 +57,11 @@
     
     [_valueLabel setText:[NSString stringWithFormat:@"%@\n%@", outcomeString, budgetString] afterInheritingLabelAttributesAndConfiguringWithBlock:^ NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString)
      {
-         NSRange blackRange = NSMakeRange(0, [outcomeString length]);
+         NSRange whiteRange = NSMakeRange(0, [outcomeString length]);
          NSRange grayRange = NSMakeRange([outcomeString length] + 1, [budgetString length]);;
          
-         [mutableAttributedString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)[UIColor blackColor].CGColor range:blackRange];
-         [mutableAttributedString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)[UIColor grayColor].CGColor range:grayRange];
+         [mutableAttributedString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)[UIColor whiteColor].CGColor range:whiteRange];
+         [mutableAttributedString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(id)[UIColor lightGrayColor].CGColor range:grayRange];
          
          return mutableAttributedString;
      }];
@@ -86,7 +89,7 @@
     }
     else
     {
-        [_valueLabel setTextColor:[UIColor blackColor]];
+        [_valueLabel setTextColor:[UIColor whiteColor]];
         
         NSString *resultString = [NSString stringWithFormat:@"%@ р.", [CStringUtility spacedMoneyString:[_outcomeCategory.outcome stringValue]]];
         [_valueLabel setText:resultString];

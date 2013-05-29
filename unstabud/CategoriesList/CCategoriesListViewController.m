@@ -21,8 +21,8 @@
     [[CommandMaster sharedInstance] addButtons:@[
 //     [CommandButton createButtonWithImage:[UIImage imageNamed:@"saveIcon"] andTitle:@"save" andMenuListItems:@[@"menu item 1", @"menu item 2", @"menu item 3"]],
      [CommandButton createButtonWithImage:[UIImage imageNamed:@"addIncomeButton"] andTitle:@"Добавить Доход"],
-     [CommandButton createButtonWithImage:[UIImage imageNamed:@"addOutcomeCategoryButton"] andTitle:@"Добавить Категорию"],
-     [CommandButton createButtonWithImage:[UIImage imageNamed:@"settingsButton"] andTitle:@"Настройки"]]
+     [CommandButton createButtonWithImage:[UIImage imageNamed:@"addOutcomeCategoryButton"] andTitle:@"Добавить Категорию"]/*,
+     [CommandButton createButtonWithImage:[UIImage imageNamed:@"settingsButton"] andTitle:@"Настройки"]*/]
                                       forGroup:@"TestGroup"];
     
     [[CommandMaster sharedInstance] addToView:self.view andLoadGroup:@"TestGroup"];

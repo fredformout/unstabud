@@ -14,7 +14,7 @@
 #define kAppBarFullHeight ((_showButtonTitles) ? 60 : 40)
 #define kAppBarMenuListHeight ((_showButtonTitles) ? 150 : 140)
 #define kAppBarTotalHeight kAppBarMinimalHeight + kAppBarFullHeight + kAppBarMenuListHeight
-#define kCircleSize 3
+#define kCircleSize 30
 #define kAnimationDuration 0.3
 #define kMenuListCellHeight 44
 
@@ -38,7 +38,8 @@ static CommandMaster *_sharedInstance = nil;
 
 @synthesize showButtonTitles = _showButtonTitles,
             delegate = _delegate,
-            autoHide = _autoHide;
+            autoHide = _autoHide,
+            arrowImageView = _arrowImageView;
 
 #pragma mark Public Functions Start
 
@@ -61,6 +62,14 @@ static CommandMaster *_sharedInstance = nil;
         _showButtonTitles = YES;
         
         self.frame = CGRectMake(160.0, 700.0, 0.0, 0.0);
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appBackground"]];
+        [self addSubview:imageView];
+        
+        UIImage *arrowImage = [UIImage imageNamed:@"arrow-up"];
+        _arrowImageView = [[UIImageView alloc] initWithImage:arrowImage];
+        [_arrowImageView setFrame:CGRectMake(150.0, 2.0, 16.0, 16.0)];
+        [self addSubview:_arrowImageView];
     }
     return self;
 }
@@ -184,15 +193,23 @@ static CommandMaster *_sharedInstance = nil;
         [self animateButtonFramesToState:AppBarMinimal];
     } completion:^(BOOL finished) {
         _currentState = AppBarMinimal;
+        
+        [UIView animateWithDuration:0.1 animations:^{
+            [_arrowImageView setAlpha:1.0];
+        }];
     }];
 }
 
 - (void)showFullAppBar {
-    [UIView animateWithDuration:kAnimationDuration animations:^{
-        self.frame = CGRectMake(0, (_parentView.frame.size.height - (kAppBarMinimalHeight + kAppBarFullHeight)), self.frame.size.width, self.frame.size.height);
-        [self animateButtonFramesToState:AppBarFull];
+    [UIView animateWithDuration:0.1 animations:^{
+        [_arrowImageView setAlpha:0.0];
     } completion:^(BOOL finished) {
-        _currentState = AppBarFull;
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            self.frame = CGRectMake(0, (_parentView.frame.size.height - (kAppBarMinimalHeight + kAppBarFullHeight)), self.frame.size.width, self.frame.size.height);
+            [self animateButtonFramesToState:AppBarFull];
+        } completion:^(BOOL finished) {
+            _currentState = AppBarFull;
+        }];
     }];
 }
 
@@ -316,19 +333,6 @@ static CommandMaster *_sharedInstance = nil;
 
 - (void)drawRect:(CGRect)rect
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-    
-    // Create the circles for "See more"
-    _rightCircle = CGRectMake((rect.size.width - 20), (kAppBarMinimalHeight/2 - kCircleSize/2), kCircleSize, kCircleSize);
-    _middleCircle = CGRectMake((_rightCircle.origin.x - 6), _rightCircle.origin.y, _rightCircle.size.width, _rightCircle.size.height);
-    _leftCircle = CGRectMake((_middleCircle.origin.x - 6), _middleCircle.origin.y, _middleCircle.size.width, _middleCircle.size.height);
-    CGContextFillEllipseInRect(context, _rightCircle);
-    CGContextFillEllipseInRect(context, _middleCircle);
-    CGContextFillEllipseInRect(context, _leftCircle);
-    
     // Add function calls for buttons.
     for (CommandButton *button in [_buttonContainer objectForKey:_currentGroup]) {
         if (button.containsMenuList) {

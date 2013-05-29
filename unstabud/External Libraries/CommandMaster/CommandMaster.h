@@ -46,5 +46,6 @@ typedef NS_ENUM(NSUInteger, AppBarState) {
 @property (nonatomic, readonly) AppBarState currentState;
 @property (nonatomic) bool autoHide;
 @property (nonatomic, strong) id<CommandMasterDelegate> delegate;
+@property (nonatomic, strong) UIImageView *arrowImageView;
 
 @end
