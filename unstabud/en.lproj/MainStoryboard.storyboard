@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="U2A-gA-Hc7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rat-Wb-1Y2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController id="nsy-oC-Px3" customClass="CCategoriesListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AeP-fx-xAY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -59,21 +59,13 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="nHu-vR-5Zt">
-                        <barButtonItem key="leftBarButtonItem" title="+ Доход" id="ycg-nG-4lV">
-                            <connections>
-                                <segue destination="iHC-Ms-T0g" kind="modal" identifier="SegueToIncomeScreen" modalTransitionStyle="coverVertical" id="COR-aB-06n"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+ Категорию" id="UcO-uJ-nQa">
-                            <connections>
-                                <segue destination="mjl-pp-dWK" kind="modal" identifier="SegueToAddCategoryScreen" modalTransitionStyle="coverVertical" id="r1q-Yo-b1X"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="+ Доход" id="ycg-nG-4lV"/>
+                        <barButtonItem key="rightBarButtonItem" title="+ Категорию" id="UcO-uJ-nQa"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWc-RB-vOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113" y="268"/>
+            <point key="canvasLocation" x="83" y="280"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vgx-bN-24H">
@@ -342,20 +334,34 @@
             </objects>
             <point key="canvasLocation" x="891" y="-437"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yZh-ZP-BIX">
+        <!--Categories List View Controller-->
+        <scene sceneID="1dt-bA-juf">
             <objects>
-                <navigationController definesPresentationContext="YES" id="U2A-gA-Hc7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIq-Es-HIc">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                <viewController id="rat-Wb-1Y2" customClass="CCategoriesListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1MB-s6-GxS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" id="dbs-3g-EeO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="nsy-oC-Px3" kind="embed" id="Xlh-tc-9va"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cwf-aP-AMO"/>
                     <connections>
-                        <segue destination="nsy-oC-Px3" kind="relationship" relationship="rootViewController" id="wKz-6x-6gw"/>
+                        <segue destination="iHC-Ms-T0g" kind="modal" identifier="SegueToIncomeScreen" modalTransitionStyle="coverVertical" id="yae-p7-qjo"/>
+                        <segue destination="mjl-pp-dWK" kind="modal" identifier="SegueToAddCategoryScreen" modalTransitionStyle="coverVertical" id="21z-Dw-30j"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YYQ-ku-QDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vt1-vr-JtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-647" y="268"/>
+            <point key="canvasLocation" x="-706" y="260"/>
         </scene>
     </scenes>
     <classes>
@@ -381,6 +387,9 @@
         </class>
         <class className="CCategoriesListTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CCategoriesListTableViewController.h"/>
+        </class>
+        <class className="CCategoriesListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CCategoriesListViewController.h"/>
         </class>
         <class className="CIncomeScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CIncomeScreenViewController.h"/>

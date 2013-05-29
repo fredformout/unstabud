@@ -36,6 +36,9 @@
 		1E1DC892174CDDD5009C558F /* CAddOutcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */; };
 		1EC1E59D1755E03800F9F993 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC1E59C1755E03800F9F993 /* CoreText.framework */; };
 		1EC1E5A21755E0EB00F9F993 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */; };
+		1EC1E5A81755EFA300F9F993 /* CommandButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A51755EFA300F9F993 /* CommandButton.m */; };
+		1EC1E5A91755EFA300F9F993 /* CommandMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A71755EFA300F9F993 /* CommandMaster.m */; };
+		1EC1E5AC1755F0E000F9F993 /* CCategoriesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5AB1755F0E000F9F993 /* CCategoriesListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +92,12 @@
 		1EC1E59C1755E03800F9F993 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		1EC1E5A01755E0EB00F9F993 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		1EC1E5A41755EFA300F9F993 /* CommandButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandButton.h; sourceTree = "<group>"; };
+		1EC1E5A51755EFA300F9F993 /* CommandButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandButton.m; sourceTree = "<group>"; };
+		1EC1E5A61755EFA300F9F993 /* CommandMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandMaster.h; sourceTree = "<group>"; };
+		1EC1E5A71755EFA300F9F993 /* CommandMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandMaster.m; sourceTree = "<group>"; };
+		1EC1E5AA1755F0E000F9F993 /* CCategoriesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCategoriesListViewController.h; sourceTree = "<group>"; };
+		1EC1E5AB1755F0E000F9F993 /* CCategoriesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCategoriesListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +252,8 @@
 				1E1DC86C174CA177009C558F /* CCategoriesListTableViewController.m */,
 				1E1DC86F174CA245009C558F /* COutcomeCell.h */,
 				1E1DC870174CA245009C558F /* COutcomeCell.m */,
+				1EC1E5AA1755F0E000F9F993 /* CCategoriesListViewController.h */,
+				1EC1E5AB1755F0E000F9F993 /* CCategoriesListViewController.m */,
 			);
 			path = CategoriesList;
 			sourceTree = "<group>";
@@ -277,6 +288,7 @@
 		1EC1E59E1755E05600F9F993 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1EC1E5A31755EFA300F9F993 /* CommandMaster */,
 				1EC1E59F1755E0EB00F9F993 /* TTTAttributedLabel */,
 			);
 			path = "External Libraries";
@@ -289,6 +301,17 @@
 				1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */,
 			);
 			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		1EC1E5A31755EFA300F9F993 /* CommandMaster */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1E5A41755EFA300F9F993 /* CommandButton.h */,
+				1EC1E5A51755EFA300F9F993 /* CommandButton.m */,
+				1EC1E5A61755EFA300F9F993 /* CommandMaster.h */,
+				1EC1E5A71755EFA300F9F993 /* CommandMaster.m */,
+			);
+			path = CommandMaster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +399,9 @@
 				1E1DC88E174CBE28009C558F /* CDao+OutcomeCategory.m in Sources */,
 				1E1DC892174CDDD5009C558F /* CAddOutcomeScreenViewController.m in Sources */,
 				1EC1E5A21755E0EB00F9F993 /* TTTAttributedLabel.m in Sources */,
+				1EC1E5A81755EFA300F9F993 /* CommandButton.m in Sources */,
+				1EC1E5A91755EFA300F9F993 /* CommandMaster.m in Sources */,
+				1EC1E5AC1755F0E000F9F993 /* CCategoriesListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

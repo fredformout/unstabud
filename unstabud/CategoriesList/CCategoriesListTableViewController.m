@@ -22,11 +22,6 @@
 
 @implementation CCategoriesListTableViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -85,13 +80,18 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 30.0)];
+    [view setBackgroundColor:[UIColor blackColor]];
+    
+    NSString *textForLabel;
+    
     OutcomeCategory *outcomeCategory = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
     
     if ([outcomeCategory.budgetIsDefined boolValue] == YES)
     {
-        return @"Мои Бюджеты";
+        textForLabel = @"Мои Бюджеты";
     }
     else
     {
@@ -111,8 +111,17 @@
             }
         }
         
-        return [NSString stringWithFormat:@"Осталось %@ р.", [CStringUtility spacedMoneyString:[NSString stringWithFormat:@"%.0f", budgetForOthers]]];
+        textForLabel = [NSString stringWithFormat:@"Осталось %@ р.", [CStringUtility spacedMoneyString:[NSString stringWithFormat:@"%.0f", budgetForOthers]]];
     }
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0, tableView.frame.size.width, 22.0)];
+    [view addSubview:label];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setFont:[UIFont fontWithName:@"Helvetica-Bold" size:16]];
+    [label setText:textForLabel];
+    
+    return view;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
