@@ -26,6 +26,13 @@
     }
 }
 
+- (void)customizeUI
+{
+    [[UINavigationBar appearance]
+     setBackgroundImage:[UIImage imageNamed:@"navBackground"]
+     forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)createCashState
 {
     [_dataAccessManager saveDataInForeignContext:^(NSManagedObjectContext *context)
@@ -42,6 +49,7 @@
     [_dataAccessManager.persistentStoreCoordinator class];
     _stateHolder = [[CStateHolder alloc] init];
     
+    [self customizeUI];
     [self checkCashState];
     
     return YES;
