@@ -1,16 +1,17 @@
 //
-//  CashState.m
+//  Period.m
 //  unstabud
 //
 //  Created by fredformout on 08.06.13.
 //  Copyright (c) 2013 iDecide. All rights reserved.
 //
 
-#import "CashState.h"
+#import "Period.h"
 
 
-@implementation CashState
+@implementation Period
 
-@dynamic value;
+@dynamic start;
+@dynamic end;
 
 @end

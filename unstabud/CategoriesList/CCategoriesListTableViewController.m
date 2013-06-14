@@ -12,6 +12,7 @@
 #import "CDao+CashState.h"
 #import "CDao+OutcomeCategory.h"
 #import "CStringUtility.h"
+#import "COutcomesListTableViewController.h"
 #import "CAddOutcomeScreenViewController.h"
 
 @interface CCategoriesListTableViewController () {
@@ -33,35 +34,32 @@
 {
     [super viewWillAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     CDao *dao = [CDao daoWithContext:delegate.dataAccessManager.managedObjectContext];
     [self.navigationItem setTitle:[NSString stringWithFormat:@"%@ р.",[CStringUtility spacedMoneyString:[[dao cashState].value stringValue]]]];
-    [self reloadTable];
+    
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [super prepareForSegue:segue sender:sender];
     
-    if ([segue.identifier isEqualToString:@"SegueToAddOutcomeScreen"])
+    if ([segue.identifier isEqualToString:@"SegueToOutcomesList"])
     {
-        UINavigationController *temp = segue.destinationViewController;
-        CAddOutcomeScreenViewController *destination = [temp.viewControllers objectAtIndex:0];
-        
+        COutcomesListTableViewController *destination = segue.destinationViewController;
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         destination.outcomeCategory = [self.fetchedResultsController objectAtIndexPath:path];
     }
-}
-
-- (void)reloadDataSource
-{
-    _fetchedResultsController = nil;
-}
-
-- (void)reloadTable
-{
-    [self reloadDataSource];
-    [self.tableView reloadData];
+    else if ([segue.identifier isEqualToString:@"SegueToAddOutcomeScreen"])
+    {
+        NSIndexPath *path = [self.tableView indexPathForCell:(UITableViewCell *)((UIButton *)sender).superview.superview];
+        UINavigationController *navigationController = segue.destinationViewController;
+        CAddOutcomeScreenViewController *destination = [navigationController.viewControllers objectAtIndex:0];
+        destination.outcomeCategory = [self.fetchedResultsController objectAtIndexPath:path];
+    }
 }
 
 #pragma mark - Table view data source

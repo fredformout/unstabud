@@ -9,6 +9,7 @@
 #import "CAddOutcomeScreenViewController.h"
 #import "AppDelegate.h"
 #import "CDao+CashState.h"
+#import "CashMove.h"
 
 @interface CAddOutcomeScreenViewController ()
 
@@ -18,32 +19,55 @@
 
 @synthesize outcomeCategory = _outcomeCategory;
 @synthesize outcomeValueTextField = _outcomeValueTextField;
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
+@synthesize nameOfOutcomeTextField = _nameOfOutcomeTextField;
+@synthesize moodSegmentedControl = _moodSegmentedControl;
 
 - (IBAction)pressDoneAction
 {
     if (![_outcomeValueTextField.text isEqualToString:@""])
     {
+        NSString *text = _outcomeValueTextField.text;
+        NSString *nameOfOutcomeText = _nameOfOutcomeTextField.text;
+        int selectedMood = _moodSegmentedControl.selectedSegmentIndex;
+        
         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [delegate.dataAccessManager saveDataInForeignContext:^(NSManagedObjectContext *context)
+        [delegate.dataAccessManager saveDataInBackgroundInForeignContext:^(NSManagedObjectContext *context)
          {
              OutcomeCategory *outcomeCategory = (OutcomeCategory *)[context objectWithID:_outcomeCategory.objectID];
-             outcomeCategory.outcome = [NSNumber numberWithDouble:[outcomeCategory.outcome floatValue] + [_outcomeValueTextField.text floatValue]];
+             outcomeCategory.outcome = [NSNumber numberWithDouble:[outcomeCategory.outcome floatValue] + [text floatValue]];
              
              CDao *dao = [CDao daoWithContext:context];
              
              CashState *cashState = [dao cashState];
-             double result = [cashState.value floatValue] - [_outcomeValueTextField.text floatValue];
+             double result = [cashState.value floatValue] - [text floatValue];
              
              cashState.value = [NSNumber numberWithDouble:result];
+             
+             CashMove *cashMove = [NSEntityDescription insertNewObjectForEntityForName:@"CashMove" inManagedObjectContext:context];
+             if (![nameOfOutcomeText isEqualToString:@""])
+             {
+                 cashMove.name = [nameOfOutcomeText capitalizedString];
+             }
+             else
+             {
+                 cashMove.name = @"Без комментариев";
+             }
+             cashMove.date = [NSDate date];
+             cashMove.mood = [NSNumber numberWithInt:selectedMood];
+             cashMove.value = [NSNumber numberWithDouble:[text doubleValue]];
+             cashMove.isOutcome = [NSNumber numberWithBool:YES];
+             cashMove.outcomeCategory = outcomeCategory;
+             cashMove.nameOfCategory = cashMove.outcomeCategory.name;
+         }
+         completion:^
+         {
+             [self closeScreen];
          }];
     }
-    
-    [self closeScreen];
+    else
+    {
+        [self closeScreen];
+    }
 }
 
 - (IBAction)closeScreen

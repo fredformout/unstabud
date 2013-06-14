@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) OutcomeCategory *outcomeCategory;
 @property (nonatomic, strong) IBOutlet UITextField *outcomeValueTextField;
+@property (nonatomic, strong) IBOutlet UITextField *nameOfOutcomeTextField;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *moodSegmentedControl;
 
 - (IBAction)pressDoneAction;
 - (IBAction)closeScreen;

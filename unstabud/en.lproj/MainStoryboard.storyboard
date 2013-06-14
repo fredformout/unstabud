@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rat-Wb-1Y2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Aoa-Kx-awZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZC0-46-D7a">
-                                            <rect key="frame" x="56" y="0.0" width="163" height="43"/>
+                                            <rect key="frame" x="50" y="0.0" width="160" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,8 +31,8 @@
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAI-Cb-3c2" customClass="TTTAttributedLabel">
-                                            <rect key="frame" x="227" y="0.0" width="81" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="210" y="0.0" width="100" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +40,7 @@
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="AXu-Az-WSX">
-                                            <rect key="frame" x="17" y="8" width="29" height="29"/>
+                                            <rect key="frame" x="10" y="8" width="29" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal">
@@ -60,24 +60,23 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="ZC0-46-D7a" id="vwO-F4-hA9"/>
                                     <outlet property="valueLabel" destination="RAI-Cb-3c2" id="l8F-7c-9p6"/>
+                                    <segue destination="yML-XZ-u9l" kind="push" identifier="SegueToOutcomesList" id="WC2-vA-9LV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nHu-vR-5Zt">
-                        <barButtonItem key="leftBarButtonItem" title="+ Доход" id="ycg-nG-4lV"/>
-                        <barButtonItem key="rightBarButtonItem" title="+ Категорию" id="UcO-uJ-nQa"/>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWc-RB-vOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="280"/>
+            <point key="canvasLocation" x="85" y="280"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vgx-bN-24H">
             <objects>
                 <navigationController definesPresentationContext="YES" id="mjl-pp-dWK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4U7-e2-e8I">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="4U7-e2-e8I">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -87,6 +86,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEN-bM-lgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="451" y="1000"/>
+        </scene>
+        <!--Outcomes List Table View Controller-->
+        <scene sceneID="ieK-mS-qSl">
+            <objects>
+                <tableViewController id="yML-XZ-u9l" customClass="COutcomesListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eoa-dg-jJT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OutcomeItemCell" id="sn8-nG-g8y" customClass="COutcomeItemCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tru-JJ-M9i">
+                                            <rect key="frame" x="50" y="0.0" width="140" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9p-GO-JLu">
+                                            <rect key="frame" x="190" y="0.0" width="120" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bdf-JC-zJt">
+                                            <rect key="frame" x="190" y="22" width="120" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="0.61176470588235299" green="0.86274509803921573" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="kjx-H7-rhE">
+                                            <rect key="frame" x="10" y="8" width="29" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="cashMoveValueLabel" destination="g9p-GO-JLu" id="GoY-88-WaN"/>
+                                    <outlet property="dateLabel" destination="Bdf-JC-zJt" id="tja-8h-ly7"/>
+                                    <outlet property="moodImageView" destination="kjx-H7-rhE" id="H6U-Gn-ZkO"/>
+                                    <outlet property="nameLabel" destination="tru-JJ-M9i" id="gAc-E0-OoM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mYV-jM-Bmg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bY4-zF-Gcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="280"/>
         </scene>
         <!--Add Category Screen View Controller-->
         <scene sceneID="fif-iJ-seO">
@@ -143,7 +208,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="No2-GE-kZ6">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="NtF-LJ-1J3">
@@ -192,8 +257,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="dK8-I2-gwh">
+                                <rect key="frame" x="35" y="96" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jjd-dr-Tfe" id="p1j-AA-wqt"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Как назовем расход:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KIU-Fr-sAp">
+                                <rect key="frame" x="24" y="67" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Какие ощущения:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XBq-B8-RzG">
+                                <rect key="frame" x="24" y="134" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="JCq-Di-flf">
+                                <rect key="frame" x="24" y="163" width="262" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="sadMood.png"/>
+                                    <segment title="" image="noMood.png"/>
+                                    <segment title="" image="happyMood.png"/>
+                                </segments>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lyN-Nv-6rI">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="2lu-lE-M6f">
@@ -208,18 +306,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="moodSegmentedControl" destination="JCq-Di-flf" id="wMT-UD-BpR"/>
+                        <outlet property="nameOfOutcomeTextField" destination="dK8-I2-gwh" id="kIX-th-q8W"/>
                         <outlet property="outcomeValueTextField" destination="ne6-G7-8xk" id="G8A-6l-TjD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwH-3J-nIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="268"/>
+            <point key="canvasLocation" x="1967" y="-437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a2T-mp-WoS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="FhX-pS-E2b" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Xf-en-QWb">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="3Xf-en-QWb">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -228,13 +330,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EZ-yB-2Jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="268"/>
+            <point key="canvasLocation" x="1527" y="-437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jd1-gY-3o0">
             <objects>
                 <navigationController definesPresentationContext="YES" id="iHC-Ms-T0g" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvg-gv-XnD">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="rvg-gv-XnD">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -254,7 +358,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="k1o-es-2sV">
-                                <rect key="frame" x="35" y="166" width="251" height="30"/>
+                                <rect key="frame" x="35" y="233" width="251" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -263,35 +367,35 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Сбросить бюджеты?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1CX-cs-rx8">
-                                <rect key="frame" x="24" y="70" width="173" height="21"/>
+                                <rect key="frame" x="24" y="137" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ADl-DY-9FH">
-                                <rect key="frame" x="219" y="67" width="79" height="27"/>
+                                <rect key="frame" x="219" y="134" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="resetBudgetsSwitchValueChangedAction" destination="QKA-Ob-EkI" eventType="valueChanged" id="2Eh-PY-nrj"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="X01-De-kge">
-                                <rect key="frame" x="219" y="102" width="79" height="27"/>
+                                <rect key="frame" x="219" y="169" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="payOffDebtsSwitchValueChangedAction" destination="QKA-Ob-EkI" eventType="valueChanged" id="YWp-zF-BaF"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Раздать долги?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ngs-f1-EeB">
-                                <rect key="frame" x="24" y="105" width="130" height="21"/>
+                                <rect key="frame" x="24" y="172" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Введите сколько вы должны:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z4m-5k-Sb6">
-                                <rect key="frame" x="24" y="137" width="241" height="21"/>
+                                <rect key="frame" x="24" y="204" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -313,8 +417,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="pFb-BI-OhI">
+                                <rect key="frame" x="35" y="96" width="251" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QKA-Ob-EkI" id="qJ4-mE-0FC"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Как назовем доход:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MNw-gj-JpH">
+                                <rect key="frame" x="24" y="67" width="272" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tfU-y5-VAC">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="dol-SM-Ymt">
@@ -322,15 +442,16 @@
                                 <action selector="closeScreen" destination="QKA-Ob-EkI" id="vew-2J-9bG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Готово" id="yoh-rJ-lSg">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" id="I0a-Sh-D93">
                             <connections>
-                                <action selector="pressDoneAction" destination="QKA-Ob-EkI" id="Ay8-xc-DRf"/>
+                                <action selector="pressDoneAction" destination="QKA-Ob-EkI" id="6Pu-BY-YY6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="debtsValueTextField" destination="k1o-es-2sV" id="geW-vq-mQw"/>
                         <outlet property="incomeValueTextField" destination="iIe-A4-692" id="Uh0-Dc-gdf"/>
+                        <outlet property="nameOfIncomeTextField" destination="pFb-BI-OhI" id="SYZ-kG-qQP"/>
                         <outlet property="payOffDebtsSwitch" destination="X01-De-kge" id="00G-US-tjj"/>
                         <outlet property="resetBudgetsSwitch" destination="ADl-DY-9FH" id="MJZ-PZ-cae"/>
                         <outlet property="valueOfDebtsLabel" destination="z4m-5k-Sb6" id="9CN-5g-l8e"/>
@@ -339,6 +460,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQU-vY-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="-437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x7u-GT-iNG">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Aoa-Kx-awZ" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="8UT-BB-cwq">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rat-Wb-1Y2" kind="relationship" relationship="rootViewController" id="qHH-Bf-HDG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rqz-DW-f5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1287" y="260"/>
         </scene>
         <!--Categories List View Controller-->
         <scene sceneID="1dt-bA-juf">
@@ -370,6 +508,11 @@
             <point key="canvasLocation" x="-706" y="260"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="happyMood.png" width="30" height="31"/>
+        <image name="noMood.png" width="30" height="31"/>
+        <image name="sadMood.png" width="30" height="31"/>
+    </resources>
     <classes>
         <class className="CAddCategoryScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CAddCategoryScreenViewController.h"/>
@@ -388,6 +531,8 @@
             <relationships>
                 <relationship kind="action" name="closeScreen"/>
                 <relationship kind="action" name="pressDoneAction"/>
+                <relationship kind="outlet" name="moodSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="nameOfOutcomeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="outcomeValueTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
@@ -406,6 +551,7 @@
                 <relationship kind="action" name="resetBudgetsSwitchValueChangedAction"/>
                 <relationship kind="outlet" name="debtsValueTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="incomeValueTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameOfIncomeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="payOffDebtsSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="resetBudgetsSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="valueOfDebtsLabel" candidateClass="UILabel"/>
@@ -417,6 +563,18 @@
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="valueLabel" candidateClass="TTTAttributedLabel"/>
             </relationships>
+        </class>
+        <class className="COutcomeItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/COutcomeItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cashMoveValueLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="moodImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="COutcomesListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/COutcomesListTableViewController.h"/>
         </class>
         <class className="TTTAttributedLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TTTAttributedLabel.h"/>

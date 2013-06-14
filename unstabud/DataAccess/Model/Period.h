@@ -1,5 +1,5 @@
 //
-//  CashState.h
+//  Period.h
 //  unstabud
 //
 //  Created by fredformout on 08.06.13.
@@ -10,8 +10,9 @@
 #import <CoreData/CoreData.h>
 
 
-@interface CashState : NSManagedObject
+@interface Period : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * value;
+@property (nonatomic, retain) NSDate * start;
+@property (nonatomic, retain) NSDate * end;
 
 @end

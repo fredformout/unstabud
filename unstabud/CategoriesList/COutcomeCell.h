@@ -10,17 +10,7 @@
 #import "OutcomeCategory.h"
 #import "TTTAttributedLabel.h"
 
-typedef enum
-{
-    WASTE = 0,
-    LEFT = 1
-}
-valueLabelState;
-
 @interface COutcomeCell : UITableViewCell
-{
-    valueLabelState stateOfValueLabel;
-}
 
 @property (nonatomic, strong) OutcomeCategory *outcomeCategory;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;

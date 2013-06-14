@@ -2,7 +2,7 @@
 //  OutcomeCategory.m
 //  unstabud
 //
-//  Created by fredformout on 22.05.13.
+//  Created by fredformout on 08.06.13.
 //  Copyright (c) 2013 iDecide. All rights reserved.
 //
 
@@ -11,9 +11,10 @@
 
 @implementation OutcomeCategory
 
-@dynamic name;
 @dynamic budget;
-@dynamic outcome;
 @dynamic budgetIsDefined;
+@dynamic name;
+@dynamic outcome;
+@dynamic outcomes;
 
 @end

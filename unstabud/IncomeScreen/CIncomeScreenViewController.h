@@ -15,6 +15,7 @@
 @property (nonatomic, strong) IBOutlet UISwitch *payOffDebtsSwitch;
 @property (nonatomic, strong) IBOutlet UILabel *valueOfDebtsLabel;
 @property (nonatomic, strong) IBOutlet UITextField *debtsValueTextField;
+@property (nonatomic, strong) IBOutlet UITextField *nameOfIncomeTextField;
 
 - (IBAction)pressDoneAction;
 - (IBAction)closeScreen;

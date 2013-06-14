@@ -26,14 +26,24 @@
 		1E1DC86A174C9D6E009C558F /* unstabud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC868174C9D6E009C558F /* unstabud.xcdatamodeld */; };
 		1E1DC86D174CA177009C558F /* CCategoriesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC86C174CA177009C558F /* CCategoriesListTableViewController.m */; };
 		1E1DC871174CA245009C558F /* COutcomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC870174CA245009C558F /* COutcomeCell.m */; };
-		1E1DC874174CA2CA009C558F /* CashState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC873174CA2CA009C558F /* CashState.m */; };
-		1E1DC87D174CA788009C558F /* OutcomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC87C174CA788009C558F /* OutcomeCategory.m */; };
 		1E1DC881174CAA1C009C558F /* CIncomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC880174CAA1C009C558F /* CIncomeScreenViewController.m */; };
 		1E1DC884174CB485009C558F /* CDao+CashState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC883174CB485009C558F /* CDao+CashState.m */; };
 		1E1DC887174CB7D0009C558F /* CStringUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC886174CB7D0009C558F /* CStringUtility.m */; };
 		1E1DC88B174CB8D6009C558F /* CAddCategoryScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC88A174CB8D6009C558F /* CAddCategoryScreenViewController.m */; };
 		1E1DC88E174CBE28009C558F /* CDao+OutcomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC88D174CBE28009C558F /* CDao+OutcomeCategory.m */; };
 		1E1DC892174CDDD5009C558F /* CAddOutcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */; };
+		1E35B0BB1763AE1400CF3AFE /* OutcomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E35B0BA1763AE1400CF3AFE /* OutcomeCategory.m */; };
+		1E35B0BE1763AE1700CF3AFE /* CashState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E35B0BD1763AE1700CF3AFE /* CashState.m */; };
+		1E35B0C11763AE1700CF3AFE /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E35B0C01763AE1700CF3AFE /* Period.m */; };
+		1E7C1AC9176B320200F6CF6E /* happyMood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC3176B320200F6CF6E /* happyMood.png */; };
+		1E7C1ACA176B320200F6CF6E /* happyMood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC4176B320200F6CF6E /* happyMood@2x.png */; };
+		1E7C1ACB176B320200F6CF6E /* noMood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC5176B320200F6CF6E /* noMood.png */; };
+		1E7C1ACC176B320200F6CF6E /* noMood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC6176B320200F6CF6E /* noMood@2x.png */; };
+		1E7C1ACD176B320200F6CF6E /* sadMood.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC7176B320200F6CF6E /* sadMood.png */; };
+		1E7C1ACE176B320200F6CF6E /* sadMood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7C1AC8176B320200F6CF6E /* sadMood@2x.png */; };
+		1E85C9F5176AF41E002B25C2 /* COutcomesListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E85C9F4176AF41E002B25C2 /* COutcomesListTableViewController.m */; };
+		1E85C9F8176AF479002B25C2 /* COutcomeItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E85C9F7176AF479002B25C2 /* COutcomeItemCell.m */; };
+		1E85C9FB176AFCCA002B25C2 /* CashMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E85C9FA176AFCCA002B25C2 /* CashMove.m */; };
 		1EC1E59D1755E03800F9F993 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC1E59C1755E03800F9F993 /* CoreText.framework */; };
 		1EC1E5A21755E0EB00F9F993 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */; };
 		1EC1E5A81755EFA300F9F993 /* CommandButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1E5A51755EFA300F9F993 /* CommandButton.m */; };
@@ -82,10 +92,6 @@
 		1E1DC86C174CA177009C558F /* CCategoriesListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCategoriesListTableViewController.m; sourceTree = "<group>"; };
 		1E1DC86F174CA245009C558F /* COutcomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COutcomeCell.h; sourceTree = "<group>"; };
 		1E1DC870174CA245009C558F /* COutcomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COutcomeCell.m; sourceTree = "<group>"; };
-		1E1DC872174CA2CA009C558F /* CashState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashState.h; sourceTree = "<group>"; };
-		1E1DC873174CA2CA009C558F /* CashState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashState.m; sourceTree = "<group>"; };
-		1E1DC87B174CA788009C558F /* OutcomeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeCategory.h; sourceTree = "<group>"; };
-		1E1DC87C174CA788009C558F /* OutcomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeCategory.m; sourceTree = "<group>"; };
 		1E1DC87F174CAA1C009C558F /* CIncomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIncomeScreenViewController.h; sourceTree = "<group>"; };
 		1E1DC880174CAA1C009C558F /* CIncomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIncomeScreenViewController.m; sourceTree = "<group>"; };
 		1E1DC882174CB485009C558F /* CDao+CashState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDao+CashState.h"; sourceTree = "<group>"; };
@@ -98,6 +104,24 @@
 		1E1DC88D174CBE28009C558F /* CDao+OutcomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDao+OutcomeCategory.m"; sourceTree = "<group>"; };
 		1E1DC890174CDDD5009C558F /* CAddOutcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAddOutcomeScreenViewController.h; path = AddOutcomeScreen/CAddOutcomeScreenViewController.h; sourceTree = "<group>"; };
 		1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAddOutcomeScreenViewController.m; path = AddOutcomeScreen/CAddOutcomeScreenViewController.m; sourceTree = "<group>"; };
+		1E35B0B91763AE1400CF3AFE /* OutcomeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeCategory.h; sourceTree = "<group>"; };
+		1E35B0BA1763AE1400CF3AFE /* OutcomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeCategory.m; sourceTree = "<group>"; };
+		1E35B0BC1763AE1700CF3AFE /* CashState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashState.h; sourceTree = "<group>"; };
+		1E35B0BD1763AE1700CF3AFE /* CashState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashState.m; sourceTree = "<group>"; };
+		1E35B0BF1763AE1700CF3AFE /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
+		1E35B0C01763AE1700CF3AFE /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
+		1E7C1AC3176B320200F6CF6E /* happyMood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happyMood.png; sourceTree = "<group>"; };
+		1E7C1AC4176B320200F6CF6E /* happyMood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "happyMood@2x.png"; sourceTree = "<group>"; };
+		1E7C1AC5176B320200F6CF6E /* noMood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noMood.png; sourceTree = "<group>"; };
+		1E7C1AC6176B320200F6CF6E /* noMood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noMood@2x.png"; sourceTree = "<group>"; };
+		1E7C1AC7176B320200F6CF6E /* sadMood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sadMood.png; sourceTree = "<group>"; };
+		1E7C1AC8176B320200F6CF6E /* sadMood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sadMood@2x.png"; sourceTree = "<group>"; };
+		1E85C9F3176AF41E002B25C2 /* COutcomesListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COutcomesListTableViewController.h; sourceTree = "<group>"; };
+		1E85C9F4176AF41E002B25C2 /* COutcomesListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COutcomesListTableViewController.m; sourceTree = "<group>"; };
+		1E85C9F6176AF479002B25C2 /* COutcomeItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COutcomeItemCell.h; sourceTree = "<group>"; };
+		1E85C9F7176AF479002B25C2 /* COutcomeItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COutcomeItemCell.m; sourceTree = "<group>"; };
+		1E85C9F9176AFCCA002B25C2 /* CashMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashMove.h; sourceTree = "<group>"; };
+		1E85C9FA176AFCCA002B25C2 /* CashMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashMove.m; sourceTree = "<group>"; };
 		1EC1E59C1755E03800F9F993 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		1EC1E5A01755E0EB00F9F993 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		1EC1E5A11755E0EB00F9F993 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
@@ -170,6 +194,7 @@
 				1EC1E59E1755E05600F9F993 /* External Libraries */,
 				1E1DC88F174CDDAA009C558F /* AddOutcomeScreen */,
 				1E1DC888174CB8A8009C558F /* AddCategoryScreen */,
+				1E85C9F2176AF3E5002B25C2 /* OutcomesList */,
 				1E1DC87E174CA9E7009C558F /* IncomeScreen */,
 				1E1DC86E174CA20F009C558F /* CategoriesList */,
 				1E1DC834174C9D2E009C558F /* Supporting Files */,
@@ -226,10 +251,14 @@
 			isa = PBXGroup;
 			children = (
 				1E1DC868174C9D6E009C558F /* unstabud.xcdatamodeld */,
-				1E1DC872174CA2CA009C558F /* CashState.h */,
-				1E1DC873174CA2CA009C558F /* CashState.m */,
-				1E1DC87B174CA788009C558F /* OutcomeCategory.h */,
-				1E1DC87C174CA788009C558F /* OutcomeCategory.m */,
+				1E35B0BF1763AE1700CF3AFE /* Period.h */,
+				1E35B0C01763AE1700CF3AFE /* Period.m */,
+				1E35B0BC1763AE1700CF3AFE /* CashState.h */,
+				1E35B0BD1763AE1700CF3AFE /* CashState.m */,
+				1E35B0B91763AE1400CF3AFE /* OutcomeCategory.h */,
+				1E35B0BA1763AE1400CF3AFE /* OutcomeCategory.m */,
+				1E85C9F9176AFCCA002B25C2 /* CashMove.h */,
+				1E85C9FA176AFCCA002B25C2 /* CashMove.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +332,31 @@
 				1E1DC891174CDDD5009C558F /* CAddOutcomeScreenViewController.m */,
 			);
 			name = AddOutcomeScreen;
+			sourceTree = "<group>";
+		};
+		1E7C1AC2176B320200F6CF6E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E7C1AC3176B320200F6CF6E /* happyMood.png */,
+				1E7C1AC4176B320200F6CF6E /* happyMood@2x.png */,
+				1E7C1AC5176B320200F6CF6E /* noMood.png */,
+				1E7C1AC6176B320200F6CF6E /* noMood@2x.png */,
+				1E7C1AC7176B320200F6CF6E /* sadMood.png */,
+				1E7C1AC8176B320200F6CF6E /* sadMood@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1E85C9F2176AF3E5002B25C2 /* OutcomesList */ = {
+			isa = PBXGroup;
+			children = (
+				1E7C1AC2176B320200F6CF6E /* Resources */,
+				1E85C9F3176AF41E002B25C2 /* COutcomesListTableViewController.h */,
+				1E85C9F4176AF41E002B25C2 /* COutcomesListTableViewController.m */,
+				1E85C9F6176AF479002B25C2 /* COutcomeItemCell.h */,
+				1E85C9F7176AF479002B25C2 /* COutcomeItemCell.m */,
+			);
+			path = OutcomesList;
 			sourceTree = "<group>";
 		};
 		1EC1E59E1755E05600F9F993 /* External Libraries */ = {
@@ -422,6 +476,12 @@
 				1EC1E5C517562E9500F9F993 /* navBackground@2x.png in Resources */,
 				1EC1E5C817562F2100F9F993 /* rawBackground.png in Resources */,
 				1EC1E5C917562F2100F9F993 /* rawBackground@2x.png in Resources */,
+				1E7C1AC9176B320200F6CF6E /* happyMood.png in Resources */,
+				1E7C1ACA176B320200F6CF6E /* happyMood@2x.png in Resources */,
+				1E7C1ACB176B320200F6CF6E /* noMood.png in Resources */,
+				1E7C1ACC176B320200F6CF6E /* noMood@2x.png in Resources */,
+				1E7C1ACD176B320200F6CF6E /* sadMood.png in Resources */,
+				1E7C1ACE176B320200F6CF6E /* sadMood@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +502,6 @@
 				1E1DC86A174C9D6E009C558F /* unstabud.xcdatamodeld in Sources */,
 				1E1DC86D174CA177009C558F /* CCategoriesListTableViewController.m in Sources */,
 				1E1DC871174CA245009C558F /* COutcomeCell.m in Sources */,
-				1E1DC874174CA2CA009C558F /* CashState.m in Sources */,
-				1E1DC87D174CA788009C558F /* OutcomeCategory.m in Sources */,
 				1E1DC881174CAA1C009C558F /* CIncomeScreenViewController.m in Sources */,
 				1E1DC884174CB485009C558F /* CDao+CashState.m in Sources */,
 				1E1DC887174CB7D0009C558F /* CStringUtility.m in Sources */,
@@ -454,6 +512,12 @@
 				1EC1E5A81755EFA300F9F993 /* CommandButton.m in Sources */,
 				1EC1E5A91755EFA300F9F993 /* CommandMaster.m in Sources */,
 				1EC1E5AC1755F0E000F9F993 /* CCategoriesListViewController.m in Sources */,
+				1E35B0BB1763AE1400CF3AFE /* OutcomeCategory.m in Sources */,
+				1E35B0BE1763AE1700CF3AFE /* CashState.m in Sources */,
+				1E35B0C11763AE1700CF3AFE /* Period.m in Sources */,
+				1E85C9F5176AF41E002B25C2 /* COutcomesListTableViewController.m in Sources */,
+				1E85C9F8176AF479002B25C2 /* COutcomeItemCell.m in Sources */,
+				1E85C9FB176AFCCA002B25C2 /* CashMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

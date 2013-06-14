@@ -30,26 +30,36 @@
 {
     if (![_nameTextField.text isEqualToString:@""])
     {
+        NSString *text = _nameTextField.text;
+        NSString *budgetText = _budgetValueTextField.text;
+        BOOL switchValue = _budgetIsDefinedSwitch.on;
+        
         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [delegate.dataAccessManager saveDataInForeignContext:^(NSManagedObjectContext *context)
+        [delegate.dataAccessManager saveDataInBackgroundInForeignContext:^(NSManagedObjectContext *context)
         {
             OutcomeCategory *outcomeCategory = [NSEntityDescription insertNewObjectForEntityForName:@"OutcomeCategory" inManagedObjectContext:context];
             outcomeCategory.outcome = [NSNumber numberWithDouble:0.0];
-            outcomeCategory.name = _nameTextField.text;
-            outcomeCategory.budgetIsDefined = [NSNumber numberWithBool:_budgetIsDefinedSwitch.on];
+            outcomeCategory.name = [text capitalizedString];
+            outcomeCategory.budgetIsDefined = [NSNumber numberWithBool:switchValue];
             
             if ([outcomeCategory.budgetIsDefined boolValue] == YES)
             {
-                outcomeCategory.budget = [NSNumber numberWithDouble:[_budgetValueTextField.text doubleValue]];
+                outcomeCategory.budget = [NSNumber numberWithDouble:[budgetText doubleValue]];
             }
             else
             {
                 outcomeCategory.budget = [NSNumber numberWithDouble:0.0];
             }
+        }
+        completion:^
+        {
+            [self closeScreen];
         }];
     }
-    
-    [self closeScreen];
+    else
+    {
+        [self closeScreen];
+    }
 }
 
 - (IBAction)closeScreen

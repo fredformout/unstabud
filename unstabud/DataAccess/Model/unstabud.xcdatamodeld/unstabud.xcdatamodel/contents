@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CashMove" representedClassName="CashMove" elementID="CashMoveRID" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" elementID="CashMoveDateRID" syncable="YES"/>
+        <attribute name="isOutcome" optional="YES" attributeType="Boolean" elementID="CashMoveIsOutcomeRID" syncable="YES"/>
+        <attribute name="mood" optional="YES" attributeType="Integer 16" defaultValueString="0" elementID="CashMoveMoodRID" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" elementID="CashMoveNameRID" syncable="YES"/>
+        <attribute name="nameOfCategory" optional="YES" attributeType="String" elementID="CashMoveNameOfCategoryRID" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="outcomeCategory" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="OutcomeCategory" inverseName="outcomes" inverseEntity="OutcomeCategory" elementID="CashMoveOutcomeCategoryRID" syncable="YES"/>
+    </entity>
     <entity name="CashState" representedClassName="CashState" elementID="CashStateRID" syncable="YES">
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" elementID="CashStateValueRID" syncable="YES"/>
     </entity>
@@ -8,9 +17,16 @@
         <attribute name="budgetIsDefined" optional="YES" attributeType="Boolean" elementID="OutcomeCategoryBudgetIsDefinedRID" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" elementID="OutcomeCategoryNameRID" syncable="YES"/>
         <attribute name="outcome" optional="YES" attributeType="Double" defaultValueString="0.0" elementID="OutcomeCategoryOutcomeRID" syncable="YES"/>
+        <relationship name="outcomes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CashMove" inverseName="outcomeCategory" inverseEntity="CashMove" syncable="YES"/>
+    </entity>
+    <entity name="Period" representedClassName="Period" elementID="PeriodRID" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" elementID="PeriodEndRID" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" elementID="PeriodStartRID" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OutcomeCategory" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="CashMove" positionX="160" positionY="192" width="128" height="150"/>
         <element name="CashState" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="OutcomeCategory" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="Period" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

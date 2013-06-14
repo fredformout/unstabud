@@ -9,7 +9,17 @@
 #import "COutcomeCell.h"
 #import "CStringUtility.h"
 
+typedef enum
+{
+    WASTE = 0,
+    LEFT = 1
+}
+valueLabelState;
+
 @implementation COutcomeCell
+{
+    valueLabelState stateOfValueLabel;
+}
 
 @synthesize outcomeCategory = _outcomeCategory;
 @synthesize nameLabel = _nameLabel;
@@ -35,7 +45,7 @@
 {
     if (stateOfValueLabel == WASTE)
     {
-        [_valueLabel setTextColor:[UIColor colorWithRed:55.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:1.0]];
+        [_valueLabel setTextColor:[UIColor colorWithRed:55.0/255.0 green:220.0/255.0 blue:0.0/255.0 alpha:1.0]];
         
         NSString *resultString = [CStringUtility spacedMoneyString:[NSString stringWithFormat:@"%.0f р.", [_outcomeCategory.budget floatValue] - [_outcomeCategory.outcome floatValue]]];
         [_valueLabel setText:resultString];
